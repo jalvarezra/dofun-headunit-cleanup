@@ -1,0 +1,11 @@
+# Apps disabled with `pm disable-user`. Tested on one unit only: see docs/FINDINGS.md.
+# Do NOT add com.tw.service, com.tw.service.xt, com.tw.uart, com.tw.car, com.tw.bt, com.tw.eq,
+# com.tw.radio or com.tw.reverse: they run ignition power-off, audio and the reverse camera.
+
+com.tw.core                   # updater and analytics, MQTT to a cardoor.cn broker
+com.tw.coreservice            # connection to 8.214.2.205:80 stopped once this was disabled
+com.dofun.carassistant.car    # CarMate: bundles an MQTT client, has location permission
+com.abupdate.fota_demo_iot    # remote updates
+com.ab2update.fota_demo_iot   # remote updates, second copy
+com.dofun.market              # vendor app store
+com.tw.bug.report             # bug reporter

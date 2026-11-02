@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Minimal home screen for head units. It asks for no permissions, not even Internet. -->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="headunit.launcher"
+    android:versionCode="1"
+    android:versionName="1.0">
+
+    <!-- Many units show "Android 14" while really running Android 10 (SDK 29). -->
+    <uses-sdk android:minSdkVersion="29" android:targetSdkVersion="29" />
+
+    <application android:label="Home" android:allowBackup="false">
+
+        <activity android:name=".Home"
+            android:exported="true"
+            android:launchMode="singleTask"
+            android:stateNotNeeded="true"
+            android:clearTaskOnLaunch="true"
+            android:screenOrientation="landscape"
+            android:theme="@android:style/Theme.Material.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.HOME" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".AllApps"
+            android:exported="false"
+            android:screenOrientation="landscape"
+            android:theme="@android:style/Theme.Material.NoActionBar" />
+    </application>
+</manifest>
